@@ -9,9 +9,9 @@ $(document).ready(function() {
 
   $(window).on('scroll', function () {
     if ($(this).scrollTop() > 10) {
-      $('#header').addClass('on');
+      $('#header').addClass('on scroll');
     } else {
-      $('#header').removeClass('on');
+      $('#header').removeClass('on scroll');
     }
   }); 
  
@@ -26,7 +26,11 @@ $(document).ready(function() {
     // $('#header').removeClass('on').find('#gnb').removeClass('active');
 
     $gnbDep2.stop().slideUp(function () {
-      $('#header').removeClass('on').find('#gnb').removeClass('active');
+      if ($('#header').is('.scroll')) {
+       $('#gnb').removeClass(active);
+      } else {
+       $('#header').removeClass('on').find('#gnb').removeClass('active');
+      }
     });
   }); 
 
